@@ -1,6 +1,7 @@
 public class Main {
   public static void main(String[] args) {
-    System.out.println("Proof of Life");
+    pluralize("fish", 0);
+    System.out.println(pluralize( "fish", 0));
   }
 
   public static String pluralize(String word, int count){
@@ -10,4 +11,6 @@ public class Main {
       return word;
     }
   }
+
+  
 }
