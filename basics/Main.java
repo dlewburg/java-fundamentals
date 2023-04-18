@@ -1,4 +1,6 @@
 import java.util.Random;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Main {
   public static void main(String[] args) {
@@ -6,6 +8,7 @@ public class Main {
     System.out.println(pluralize( "fish", 0));
 
     flipNHeads(2);
+    clock();
   }
 
   public static String pluralize(String word, int count){
@@ -37,5 +40,21 @@ public class Main {
     }
   System.out.println("It took" + " " + flips + " " + "flips to flip" + " " + num + " " + " heads in a row!");
 
+  }
+
+  public static void clock(){
+    LocalDateTime currentTime = LocalDateTime.now();
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+    String formattedTime = formatter.format(currentTime);
+    System.out.println(formattedTime);
+
+    while(true) {
+      LocalDateTime newTime = LocalDateTime.now();
+      String newFormattedTime = formatter.format(newTime);
+      if (!newFormattedTime.equals(formattedTime)) {
+        System.out.println(newFormattedTime);
+        formattedTime = newFormattedTime;
+      }
+    }
   }
 }
