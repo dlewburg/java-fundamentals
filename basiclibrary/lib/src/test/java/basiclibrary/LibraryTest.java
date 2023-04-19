@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import static basiclibrary.Library.containsDuplicates;
 import static basiclibrary.Library.roll;
 import static org.junit.jupiter.api.Assertions.*;
+import static basiclibrary.Library.calculateAverage;
 
 class LibraryTest {
     @Test void someLibraryMethodReturnsTrue() {
@@ -34,4 +35,13 @@ class LibraryTest {
         assertTrue(containsDuplicates(arr3));   // all elements are duplicates
         assertTrue(containsDuplicates(arr4));   // duplicate at end of longer array
     }
+
+    @Test public void testCalculateAverage() {
+        int[] arr = {1, 2, 3, 4, 5};
+        double expectedAvg = 3.0;
+        double actualAvg = calculateAverage(arr);
+        assertEquals(expectedAvg, actualAvg, 0.001);
+    }
+
+    
 }
