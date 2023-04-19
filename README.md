@@ -31,13 +31,13 @@ Collaborated With: Matt (TA)
 ### Featured Task
 
 1. Rolling Dice
-  * This feature requested to write a method called roll that accepts an integer n and rolls a six-sided dice n times. The method should return an array containing the values of the rolls.
+    * This feature requested to write a method called roll that accepts an integer n and rolls a six-sided dice n times. The method should return an array containing the values of the rolls.
 
 2. Contains Duplicates
-  * This feature requested write a function that would return true or false depending on if the array had dupliates.
+    * This feature requested write a function that would return true or false depending on if the array had dupliates.
   
 3. Calculating Averages
-  * This feature requested to write a method that accepts an array of integers and calculates and returns the average of all the values in the array.
+    * This feature requested to write a method that accepts an array of integers and calculates and returns the average of all the values in the array.
 
 4. Arrays of Array
-  * This feature requested for an array of arrays to calculate the average value for each array and return the array with the lowest average.
+    * This feature requested for an array of arrays to calculate the average value for each array and return the array with the lowest average.
