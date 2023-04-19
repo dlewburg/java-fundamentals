@@ -41,5 +41,22 @@ public class Library {
         return (double) sum / arr.length;
     }
 
+    public static int[] lowestAverage(int[][] arr) {
+        int minAvgIndex = 0;
+        double minAvg = Double.MAX_VALUE;
+        for (int i = 0; i < arr.length; i++) {
+            double sum = 0;
+            for (int j = 0; j < arr[i].length; j++) {
+                sum += arr[i][j];
+            }
+            double avg = sum / arr[i].length;
+            if (avg < minAvg) {
+                minAvg = avg;
+                minAvgIndex = i;
+            }
+        }
+        return arr[minAvgIndex];
+    }
+
 
 }

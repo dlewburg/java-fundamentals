@@ -5,10 +5,8 @@ package basiclibrary;
 
 import org.junit.jupiter.api.Test;
 
-import static basiclibrary.Library.containsDuplicates;
-import static basiclibrary.Library.roll;
+import static basiclibrary.Library.*;
 import static org.junit.jupiter.api.Assertions.*;
-import static basiclibrary.Library.calculateAverage;
 
 class LibraryTest {
     @Test void someLibraryMethodReturnsTrue() {
@@ -43,5 +41,10 @@ class LibraryTest {
         assertEquals(expectedAvg, actualAvg, 0.001);
     }
 
-    
+    @Test public void testFindArrayWithLowestAverage() {
+        int[][] arrays = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        int[] expected = {1, 2, 3};
+        int[] result = lowestAverage(arrays);
+        assertArrayEquals(expected, result);
+    }
 }
