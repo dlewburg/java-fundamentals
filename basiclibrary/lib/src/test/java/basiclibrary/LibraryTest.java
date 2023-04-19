@@ -5,6 +5,7 @@ package basiclibrary;
 
 import org.junit.jupiter.api.Test;
 
+import static basiclibrary.Library.containsDuplicates;
 import static basiclibrary.Library.roll;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -20,5 +21,17 @@ class LibraryTest {
         for (int roll : rolls) {
             assertTrue(roll >= 1 && roll <= 6, "Roll value is out of range");
         }
+    }
+
+    @Test public void testContainsDuplicates() {
+        int[] arr1 = {1, 2, 3, 4, 5};
+        int[] arr2 = {1, 2, 3, 4, 4};
+        int[] arr3 = {1, 1, 1, 1, 1};
+        int[] arr4 = {1, 2, 3, 4, 5, 5};
+
+        assertFalse(containsDuplicates(arr1));  // no duplicates
+        assertTrue(containsDuplicates(arr2));   // duplicate at end of array
+        assertTrue(containsDuplicates(arr3));   // all elements are duplicates
+        assertTrue(containsDuplicates(arr4));   // duplicate at end of longer array
     }
 }
