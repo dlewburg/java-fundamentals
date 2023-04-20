@@ -41,3 +41,18 @@ Collaborated With: Matt (TA)
 
 4. Arrays of Array
     * This feature requested for an array of arrays to calculate the average value for each array and return the array with the lowest average.
+
+## Maps, File I/O, and Testing
+
+This lab provided practice with `HashSet`, `HashMap`, and using `Path` for looking over a file. 
+
+Created by: Dasha Burgos
+
+### Featured Tasks
+
+1. Maps - Analyzing Weather Data
+   * Iterated over an array of arrays and find the min and max values. Also find what was not in the range of min and max and input that data in a string. Write a test for the function 
+2. Tallying Election
+   * Write a function that accepts a List of Strings and returns one string to show the most votes.
+3. File I/O
+   * Write a method that reads a file with a given `Path` and generates an error message whenever it finds a line outside the criteria
