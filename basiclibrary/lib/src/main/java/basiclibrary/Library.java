@@ -3,8 +3,9 @@
  */
 package basiclibrary;
 
-import java.util.HashSet;
-import java.util.Random;
+import java.sql.SQLOutput;
+import java.util.*;
+
 
 public class Library {
     public boolean someLibraryMethod() {
@@ -58,14 +59,15 @@ public class Library {
         }
         return arr[minAvgIndex];
     }
+
     public static String analyzeWeatherData(int[][] temperatures) {
         int minTemp = Integer.MAX_VALUE;
         int maxTemp = Integer.MIN_VALUE;
         HashSet<Integer> uniqueTemps = new HashSet<Integer>();
 
-        for(int[] week : temperatures){
-            for(int temp : week) {
-                minTemp = Math.min(minTemp,temp);
+        for (int[] week : temperatures) {
+            for (int temp : week) {
+                minTemp = Math.min(minTemp, temp);
                 maxTemp = Math.max(maxTemp, temp);
                 uniqueTemps.add(temp);
             }
@@ -93,6 +95,32 @@ public class Library {
 
     }
 
+    public static String tally(List<String> votes) {
+        HashMap<String, Integer> voteCounts = new HashMap<>();
+
+        for (String vote : votes) {
+            if (voteCounts.containsKey(vote)) {
+                voteCounts.put(vote, voteCounts.get(vote) + 1);
+            } else {
+                voteCounts.put(vote, 1);
+            }
+        }
+
+        String winner = null;
+        int maxVotes = 0;
+        for (Map.Entry<String, Integer> entry : voteCounts.entrySet()) {
+            String plant = entry.getKey();
+            int voteCount = entry.getValue();
+            if (voteCount > maxVotes){
+                winner = plant;
+                maxVotes = voteCount;
+            }
+        }
+
+        return winner;
+    }
+
+
     public static void main(String[] args) {
         int[][] weeklyMonthTemperatures = {
                 {66, 64, 58, 65, 71, 57, 60},
@@ -104,6 +132,20 @@ public class Library {
         String result = analyzeWeatherData(weeklyMonthTemperatures);
         System.out.println(result);
 
-    }
+        ArrayList<String> votes = new ArrayList<>();
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Shrub");
+        votes.add("Hedge");
+        votes.add("Shrub");
+        votes.add("Bush");
+        votes.add("Hedge");
+        votes.add("Bush");
 
+        String winner = tally(votes);
+        System.out.println(winner + " received the most votes");
+
+
+    }
 }
