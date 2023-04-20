@@ -5,6 +5,9 @@ package basiclibrary;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static basiclibrary.Library.*;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -46,5 +49,46 @@ class LibraryTest {
         int[] expected = {1, 2, 3};
         int[] result = lowestAverage(arrays);
         assertArrayEquals(expected, result);
+    }
+
+    @Test public void testAnalyseWeatherData() {
+        int[][] temperaturesArray = {
+            {77, 81, 76, 85, 80, 92, 75},
+            {86, 83, 81, 77, 82, 82, 83},
+            {88, 92, 88, 85, 83, 89, 92}
+        };
+
+        String expected =
+                """
+                        High: 92
+                        Low: 75
+                        Never saw temperature: 78
+                        Never saw temperature: 79
+                        Never saw temperature: 84
+                        Never saw temperature: 87
+                        Never saw temperature: 90
+                        Never saw temperature: 91
+                        """;
+        String actual = analyzeWeatherData(temperaturesArray);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test public void testTally() {
+        List<String> votes = new ArrayList<>();
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Shrub");
+        votes.add("Hedge");
+        votes.add("Shrub");
+        votes.add("Bush");
+        votes.add("Hedge");
+        votes.add("Bush");
+
+        String expectedWinner = "Bush";
+        String actualWinner = tally(votes);
+
+        assertEquals(expectedWinner, actualWinner);
     }
 }
