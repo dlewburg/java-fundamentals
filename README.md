@@ -56,3 +56,7 @@ Created by: Dasha Burgos
    * Write a function that accepts a List of Strings and returns one string to show the most votes.
 3. File I/O
    * Write a method that reads a file with a given `Path` and generates an error message whenever it finds a line outside the criteria
+
+**Expectation:**
+
+The file is expected to iterate over the file and determin if the data on that line meets criteria if not, it gives an error message. The message contains what lines have a semicolon missing. 
