@@ -47,4 +47,25 @@ class LibraryTest {
         int[] result = lowestAverage(arrays);
         assertArrayEquals(expected, result);
     }
+
+    @Test public void testAnalyseWeatherData() {
+        int[][] temperaturesArray = {
+            {77, 81, 76, 85, 80, 92, 75},
+            {86, 83, 81, 77, 82, 82, 83},
+            {88, 92, 88, 85, 83, 89, 92}
+        };
+
+        String expected =
+                          "High: 92\n" +
+                          "Low: 75\n" +
+                          "Never saw temperature: 78\n" +
+                          "Never saw temperature: 79\n" +
+                          "Never saw temperature: 84\n" +
+                          "Never saw temperature: 87\n" +
+                          "Never saw temperature: 90\n" +
+                          "Never saw temperature: 91\n";
+        String actual = analyzeWeatherData(temperaturesArray);
+
+        assertEquals(expected, actual);
+    }
 }

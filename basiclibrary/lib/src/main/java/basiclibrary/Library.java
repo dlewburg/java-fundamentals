@@ -3,6 +3,7 @@
  */
 package basiclibrary;
 
+import java.util.HashSet;
 import java.util.Random;
 
 public class Library {
@@ -57,6 +58,52 @@ public class Library {
         }
         return arr[minAvgIndex];
     }
+    public static String analyzeWeatherData(int[][] temperatures) {
+        int minTemp = Integer.MAX_VALUE;
+        int maxTemp = Integer.MIN_VALUE;
+        HashSet<Integer> uniqueTemps = new HashSet<Integer>();
 
+        for(int[] week : temperatures){
+            for(int temp : week) {
+                minTemp = Math.min(minTemp,temp);
+                maxTemp = Math.max(maxTemp, temp);
+                uniqueTemps.add(temp);
+            }
+        }
+
+        StringBuilder missingTemps = new StringBuilder();
+        for (int temp = minTemp; temp <= maxTemp; temp++) {
+            if (!uniqueTemps.contains(temp)) {
+                missingTemps.append("Never saw temperature: ");
+                missingTemps.append(temp);
+                missingTemps.append("\n");
+            }
+        }
+
+        StringBuilder result = new StringBuilder();
+        result.append("High: ");
+        result.append(maxTemp);
+        result.append("\n");
+        result.append("Low: ");
+        result.append(minTemp);
+        result.append("\n");
+        result.append(missingTemps.toString());
+
+        return result.toString();
+
+    }
+
+    public static void main(String[] args) {
+        int[][] weeklyMonthTemperatures = {
+                {66, 64, 58, 65, 71, 57, 60},
+                {57, 65, 65, 70, 72, 65, 51},
+                {55, 54, 60, 53, 59, 57, 61},
+                {65, 56, 55, 52, 55, 62, 57}
+        };
+
+        String result = analyzeWeatherData(weeklyMonthTemperatures);
+        System.out.println(result);
+
+    }
 
 }
