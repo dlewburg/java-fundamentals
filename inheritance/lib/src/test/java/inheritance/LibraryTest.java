@@ -4,11 +4,52 @@
 package inheritance;
 
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryTest {
     @Test void someLibraryMethodReturnsTrue() {
         Library classUnderTest = new Library();
         assertTrue(classUnderTest.someLibraryMethod(), "someLibraryMethod should return 'true'");
+    }
+
+    @Test
+    void testRestaurant1()
+    {
+        Restaurant sut = new Restaurant("Tammy's Diner", 10.0);
+        String actual = sut.toString();
+        String expected ="Restaurant{" +
+                "name='" + "Tammy's Diner" + '\'' +
+                " price=" + 10.0 +
+                '}';
+        assertEquals(expected, actual);
+    }
+// a restaurant HAS A review => CS word for relationships
+    @Test
+    void testReview()
+    {
+        Review sut = new Review("Best Restaurant Ever!!", "Ben Button", 3.5 );
+        String actual = sut.toString();
+        String expected = "Review{" +
+                "body='" + "Best Restaurant Ever!!" + '\'' +
+                ", author='" + "Ben Button" + '\'' +
+                ", numberOfStars=" + 3.5 +
+                '}';
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void testReviewsForRestaurants()
+    {
+        Review aReview = new Review("Gross! Flies everywhere. Smelled like roaches", "Tiffany H.", 1);
+        ArrayList<Review> myReviews = new ArrayList<>();
+        myReviews.add(aReview);
+        Restaurant sut = new Restaurant("Sisi's Lounge", 3.5, myReviews);
+
+        assertEquals("Restaurant{name='Sisi's Lounge', price=3.5, Review: [Review{body='Gross! Flies everywhere. Smelled like roaches', author='Tiffany H.', numberOfStars=1.0}]}", sut.toString());
+
+        sut.addReview(new Review("Gross! Flies everywhere. Smelled like roaches", "Tiffany H.", 1));
     }
 }
