@@ -63,7 +63,7 @@ public class Restaurant {
 
     public void addReview(Review review) {
         if(myReviews == null){
-            myReviews = new ArrayList<>();
+            myReviews = new ArrayList<>();c
         }
         myReviews.add(review);
     }
