@@ -14,6 +14,7 @@ public class Restaurant {
         this.numberOfStars = 0;
     }
 
+    //trying to overload but it is not working
     public Restaurant(String name, double price, ArrayList<Review> myReviews) {
         this.name = name;
 //        this.numberOfStars = numberOfStars;
@@ -21,15 +22,6 @@ public class Restaurant {
         this.myReviews = myReviews;
     }
 
-    @Override
-    public String toString()
-    {
-        return "Restaurant{" +
-                "name='" + name + '\'' +
-                ", price=" + price +
-                ", Review: " + myReviews.toString() +
-                '}';
-    }
 
     public String getName() {
         return name;
@@ -63,8 +55,17 @@ public class Restaurant {
 
     public void addReview(Review review) {
         if(myReviews == null){
-            myReviews = new ArrayList<>();c
+            myReviews = new ArrayList<>();
         }
         myReviews.add(review);
+    }
+    @Override
+    public String toString()
+    {
+        return "Restaurant{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                ", Review: " + myReviews.toString() +
+                '}';
     }
 }

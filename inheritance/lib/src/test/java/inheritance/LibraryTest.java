@@ -10,10 +10,6 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryTest {
-    @Test void someLibraryMethodReturnsTrue() {
-        Library classUnderTest = new Library();
-        assertTrue(classUnderTest.someLibraryMethod(), "someLibraryMethod should return 'true'");
-    }
 
     @Test
     void testRestaurant1()
@@ -23,6 +19,7 @@ class LibraryTest {
         String expected ="Restaurant{" +
                 "name='" + "Tammy's Diner" + '\'' +
                 " price=" + 10.0 +
+                " Review=" + sut.getMyReviews() +
                 '}';
         assertEquals(expected, actual);
     }
