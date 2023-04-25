@@ -60,3 +60,22 @@ Created by: Dasha Burgos
 **Expectation:**
 
 The file is expected to iterate over the file and determin if the data on that line meets criteria if not, it gives an error message. The message contains what lines have a semicolon missing. 
+
+## Inheritance (lab06)
+
+This lab gave insite on classes, objects, constructors, and how inheritance works in conjunction with each other. 
+
+Collaborated with: Raul(TA) & Rey(Instructor) 
+
+### Featured Tasks
+
+1. Create a Class to represent a Restaurant.
+      * This feature task requested that I create a class with three fields, a constructor, and tests for verificaton of funcationality.
+3. Create a Class to represent Reviews.
+      * This feature task requested that I create a class with three fields, a constructor, and tests for verificaton of funcationality.
+4. Review a single Restaurant
+      * This feature requested that a review is implemented to a restaurant.
+5. Create addReview Method
+      * This method will take in a Review and associate review Resturant 
+6. Change Rating
+      * addReview methoda should update the rating for a restaurant
