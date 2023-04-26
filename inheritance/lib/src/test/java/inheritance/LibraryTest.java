@@ -66,5 +66,17 @@ class LibraryTest {
         assertEquals(expected, actual);
     }
 
-
+    @Test
+    void testTheater()
+    {
+        ArrayList<String> films = new ArrayList<>();
+        films.add("Dracula");
+        Theater sut = new Theater("Flicks", films);
+        String actual = sut.toString();
+        String expected = "Theater{" +
+                "name='" + "Flicks" + '\'' +
+                ", featuredFilms=" + "Dracula" +
+                "}";
+    }
+    
 }
