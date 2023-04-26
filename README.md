@@ -79,3 +79,22 @@ Collaborated with: Raul(TA) & Rey(Instructor)
       * This method will take in a Review and associate review Resturant 
 6. Change Rating
       * addReview methoda should update the rating for a restaurant
+      
+ ## Implement (lab07)
+ 
+ This lab allowed the creation of classes and interfaces to allow reviewing non-restaurant things, while ensuring some common functionality.
+ 
+ Collaborated with Raul(TA) and Rey(Instructor)
+ 
+ ### Featured Tasks
+ 
+ 1. Create a Class to represetn a Shop
+      * This feature task requested the creation of fields, a constructor, and test to verification of functionality.
+ 2. Create ability to Reveiew Shop
+      * This feature task requeste the ability to review the Shop as well as test for functionality.
+ 3.
+      *
+ 4.
+      *
+ 5.
+      *
