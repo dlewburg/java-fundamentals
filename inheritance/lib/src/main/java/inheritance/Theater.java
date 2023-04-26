@@ -4,14 +4,17 @@ import org.checkerframework.checker.units.qual.A;
 
 import java.util.ArrayList;
 
-public class Theater {
+public class Theater extends ReviewParent{
     private String name;
     private ArrayList<String> featuredFilms;
+//    private ArrayList<Review> theaterReview;
 
-    public Theater(String name, ArrayList<String> featuredFilms)
+    public Theater(String name, ArrayList<String> featuredFilms, ArrayList<Review> theaterReview)
     {
+        super(theaterReview);
         this.name = name;
         this.featuredFilms = featuredFilms;
+//        this.theaterReview = theaterReview;
     }
 
     public void addMovie(String movie)
@@ -56,6 +59,7 @@ public class Theater {
         return "Theater{" +
                 "name='" + name + '\'' +
                 ", featuredFilms=" + featuredFilms.toString() +
+                ", Review=" + allReviews.toString() +
                 "}";
     }
 }
