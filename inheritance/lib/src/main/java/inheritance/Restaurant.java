@@ -2,7 +2,7 @@ package inheritance;
 
 import java.util.ArrayList;
 
-public class Restaurant {
+public class Restaurant extends ReviewParent{
     private String name;
     private double numberOfStars;
     private double price;
@@ -16,10 +16,11 @@ public class Restaurant {
 
     //trying to overload but it is not working
     public Restaurant(String name, double price, ArrayList<Review> myReviews) {
+        super(myReviews);
         this.name = name;
 //        this.numberOfStars = numberOfStars;
         this.price = price;
-        this.myReviews = myReviews;
+//        this.myReviews = myReviews;
     }
 
 
@@ -64,8 +65,8 @@ public class Restaurant {
     {
         return "Restaurant{" +
                 "name='" + name + '\'' +
-                " price=" + price +
-                " Review=" + myReviews.toString() +
+                ", price=" + price +
+                ", Review: " + allReviews.toString() +
                 "}";
     }
 }

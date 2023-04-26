@@ -2,7 +2,7 @@ package inheritance;
 
 import java.util.ArrayList;
 
-public class Shop {
+public class Shop extends ReviewParent{
     private String name;
     private String description;
     private double price;
@@ -18,10 +18,11 @@ public class Shop {
 
     public Shop(String name, String description, double price, ArrayList<Review> shopReview)
     {
+        super(shopReview);
         this.name = name;
         this.description = description;
         this.price = price;
-        this.shopReview = shopReview;
+//        this.shopReview = shopReview;
     }
 
 
@@ -56,7 +57,7 @@ public class Shop {
                 "name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", price=" + price +
-                ", Review=" + shopReview.toString() +
+                ", Review=" + allReviews.toString() +
                 "}";
     }
 }

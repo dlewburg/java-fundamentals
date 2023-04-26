@@ -19,8 +19,8 @@ class LibraryTest {
         String actual = sut.toString();
         String expected ="Restaurant{" +
                 "name='" + "Tammy's Diner" + '\'' +
-                " price=" + 10.0 +
-                " Review=" + emptyReview +
+                ", price=" + 10.0 +
+                ", Review: " + emptyReview +
                 '}';
         assertEquals(expected, actual);
     }
@@ -71,12 +71,16 @@ class LibraryTest {
     {
         ArrayList<String> films = new ArrayList<>();
         films.add("Dracula");
-        Theater sut = new Theater("Flicks", films);
+        Review review = new Review("What should I put?", "Me, Myself, I", 3.0);
+        ArrayList<Review> emptyReview = new ArrayList<>();
+        emptyReview.add(review);
+        Theater sut = new Theater("Flicks", films, emptyReview);
         String actual = sut.toString();
-        String expected = "Theater{" +
-                "name='" + "Flicks" + '\'' +
-                ", featuredFilms=" + "Dracula" +
-                "}";
+        String expected = "Theater{name='Flicks', featuredFilms=[Dracula], Review=[Review{body='What should I put?', author='Me, Myself, I', numberOfStars=3.0}]}";
+
+        assertEquals(actual, expected);
     }
-    
+
+
+
 }
