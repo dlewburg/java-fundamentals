@@ -88,13 +88,11 @@ Collaborated with: Raul(TA) & Rey(Instructor)
  
  ### Featured Tasks
  
- 1. Create a Class to represetn a Shop
-      * This feature task requested the creation of fields, a constructor, and test to verification of functionality.
+ 1. Create a Class to represent a Shop
+      * This feature task requested the creation of fields, a constructor, and test to verify functionality.
  2. Create ability to Reveiew Shop
-      * This feature task requeste the ability to review the Shop as well as test for functionality.
- 3.
-      *
- 4.
-      *
- 5.
-      *
+      * This feature task requested the ability to review the Shop as well as test for functionality.
+ 3. Create a Cflass to represent Theaters
+      * this feature task requested the creataion of fields, consturctor, and test to verify functionality.
+ 4. Ensure Shop and Theater are reviewable
+      * This feature taskn requested the ability to review the Theater separately from everything else
