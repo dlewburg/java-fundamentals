@@ -8,11 +8,11 @@ public class Restaurant {
     private double price;
     private ArrayList<Review> myReviews;
 
-    public Restaurant(String name, double price) {
-        this.name = name;
-        this.price = price;
-        this.numberOfStars = 0;
-    }
+//    public Restaurant(String name, double price) {
+//        this.name = name;
+//        this.price = price;
+//        this.numberOfStars = 0;
+//    }
 
     //trying to overload but it is not working
     public Restaurant(String name, double price, ArrayList<Review> myReviews) {
@@ -64,8 +64,8 @@ public class Restaurant {
     {
         return "Restaurant{" +
                 "name='" + name + '\'' +
-                ", price=" + price +
-                ", Review: " + myReviews.toString() +
-                '}';
+                " price=" + price +
+                " Review=" + myReviews.toString() +
+                "}";
     }
 }
